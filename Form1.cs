@@ -44,6 +44,7 @@ namespace MyClicker
                 left = true;
             }
         }
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)
@@ -55,5 +56,10 @@ namespace MyClicker
                 left = false;
             }
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ArrowMovement();
+        }
+
     }
 }

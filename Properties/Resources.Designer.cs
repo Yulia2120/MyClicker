@@ -71,12 +71,11 @@ namespace MyClicker.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap player1 {
+        internal static System.IO.UnmanagedMemoryStream zvon_monet {
             get {
-                object obj = ResourceManager.GetObject("player1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("zvon_monet", resourceCulture);
             }
         }
     }

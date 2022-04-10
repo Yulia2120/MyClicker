@@ -64,6 +64,7 @@ namespace MyClicker
             l_Click.Text = "Clicked: " + click;
             int index = new Random().Next(0, textR.Length);
             g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+            Sound();
         }
 
         private void pB2_MouseDown(object sender, EventArgs e)
@@ -72,6 +73,7 @@ namespace MyClicker
             l_Click.Text = "Clicked: " + click;
             int index = new Random().Next(0, textR.Length);
             g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+            Sound();
         }
 
         private void pB3_MouseDown(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace MyClicker
             l_Click.Text = "Clicked: " + click;
             int index = new Random().Next(0, textR.Length);
             g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+            Sound();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -93,6 +96,12 @@ namespace MyClicker
         {
             missed++;
             l_Missed.Text = "Missed: " + missed;
+        }
+        private void Sound()
+        {
+            System.Media.SoundPlayer sound = new System.Media.SoundPlayer(@"C:\Users\Admin\source\repos\MyClicker\Resources\zvon monet.wav");
+            sound.Play();
+
         }
     }
 }

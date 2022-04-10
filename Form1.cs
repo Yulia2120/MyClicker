@@ -17,48 +17,34 @@ namespace MyClicker
         {
             InitializeComponent();
         }
-
-        private void ArrowMovement()
+        private void MonetMove()
         {
-            if(right == true)
+            Random random = new Random();
+            int x, y, z;
+            if(pB1.Top >= 500)
             {
-                if (player.Left < 425)
-                    player.Left += 3;
+                x = random.Next(0, 300);
+                pB1.Location = new Point(x, 0);
             }
-            if(left == true)
+            if (pB2.Top >= 500)
             {
-                if(player.Left > 0)
-                {
-                    player.Left -= 3;
-                }
+                y = random.Next(0, 300);
+                pB2.Location = new Point(y, 0);
             }
-        }
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Right)
+            if (pB3.Top >= 500)
             {
-                right = true;
+                z = random.Next(0, 300);
+                pB3.Location = new Point(z, 0);
             }
-            if (e.KeyCode == Keys.Left)
-            {
-                left = true;
-            }
+            pB1.Top += 2;
+            pB2.Top += 1;
+            pB3.Top += 3;
         }
 
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Right)
-            {
-                right = false;
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                left = false;
-            }
-        }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            ArrowMovement();
+          
+            MonetMove();
         }
 
     }

@@ -12,7 +12,7 @@ namespace MyClicker
 {
     public partial class Form1 : Form
     {
-        
+        bool right, left;
         public Form1()
         {
             InitializeComponent();

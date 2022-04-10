@@ -12,7 +12,15 @@ namespace MyClicker
 {
     public partial class Form1 : Form
     {
-        bool right, left;
+        Graphics g;
+      //  Pen pen = new Pen(Color.Black, 2);
+        Point mouse_location = new Point();
+
+        string[] textR = { "100", "300", "400", "150" };
+        Font font = new Font("Arial", 14);
+        SolidBrush exbrush = new SolidBrush(Color.Red);
+       
+
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +54,23 @@ namespace MyClicker
           
             MonetMove();
         }
+        int click;
+        private void pB1_Click(object sender, EventArgs e)
+        {
+            click++;
+            l_Click.Text = "Clicked: " + click;
+        }
 
+        private void pB2_Click(object sender, EventArgs e)
+        {
+            click++;
+            l_Click.Text = "Clicked: " + click;
+        }
+
+        private void pB3_Click(object sender, EventArgs e)
+        {
+            click++;
+            l_Click.Text = "Clicked: " + click;
+        }
     }
 }

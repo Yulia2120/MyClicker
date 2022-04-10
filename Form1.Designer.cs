@@ -34,6 +34,7 @@
             this.pB3 = new MyClicker.UserPictureBox();
             this.pB2 = new MyClicker.UserPictureBox();
             this.pB1 = new MyClicker.UserPictureBox();
+            this.l_Missed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pB3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB1)).BeginInit();
@@ -51,7 +52,7 @@
             this.l_Click.BackColor = System.Drawing.Color.Transparent;
             this.l_Click.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.l_Click.ForeColor = System.Drawing.Color.Gold;
-            this.l_Click.Location = new System.Drawing.Point(13, 13);
+            this.l_Click.Location = new System.Drawing.Point(330, 9);
             this.l_Click.Name = "l_Click";
             this.l_Click.Size = new System.Drawing.Size(67, 17);
             this.l_Click.TabIndex = 1;
@@ -68,7 +69,7 @@
             this.pB3.TabIndex = 0;
             this.pB3.TabStop = false;
             this.pB3.Tag = "monet";
-            this.pB3.Click += new System.EventHandler(this.pB3_Click);
+            this.pB3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB1_MouseDown);
             // 
             // pB2
             // 
@@ -81,7 +82,7 @@
             this.pB2.TabIndex = 0;
             this.pB2.TabStop = false;
             this.pB2.Tag = "monet";
-            this.pB2.Click += new System.EventHandler(this.pB2_Click);
+            this.pB2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB1_MouseDown);
             // 
             // pB1
             // 
@@ -94,7 +95,19 @@
             this.pB1.TabIndex = 0;
             this.pB1.TabStop = false;
             this.pB1.Tag = "monet";
-            this.pB1.Click += new System.EventHandler(this.pB1_Click);
+            this.pB1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB1_MouseDown);
+            // 
+            // l_Missed
+            // 
+            this.l_Missed.AutoSize = true;
+            this.l_Missed.BackColor = System.Drawing.Color.Transparent;
+            this.l_Missed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.l_Missed.ForeColor = System.Drawing.Color.Gold;
+            this.l_Missed.Location = new System.Drawing.Point(12, 9);
+            this.l_Missed.Name = "l_Missed";
+            this.l_Missed.Size = new System.Drawing.Size(66, 17);
+            this.l_Missed.TabIndex = 2;
+            this.l_Missed.Text = "Missed: 0";
             // 
             // Form1
             // 
@@ -102,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(480, 457);
+            this.Controls.Add(this.l_Missed);
             this.Controls.Add(this.l_Click);
             this.Controls.Add(this.pB3);
             this.Controls.Add(this.pB2);
@@ -112,6 +126,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyClicker";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pB3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB1)).EndInit();
@@ -126,6 +142,7 @@
         private UserPictureBox pB2;
         private UserPictureBox pB3;
         private System.Windows.Forms.Label l_Click;
+        private System.Windows.Forms.Label l_Missed;
     }
 }
 

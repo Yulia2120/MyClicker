@@ -18,12 +18,15 @@ namespace MyClicker
 
         string[] textR = { "100", "300", "400", "150" };
         Font font = new Font("Arial", 14);
-        SolidBrush exbrush = new SolidBrush(Color.Red);
-       
+        SolidBrush exbrush = new SolidBrush(Color.Yellow);
+        int click, missed;
 
         public Form1()
         {
             InitializeComponent();
+            g = CreateGraphics();
+
+            MouseMove += Form1_MouseMove;
         }
         private void MonetMove()
         {
@@ -54,23 +57,42 @@ namespace MyClicker
           
             MonetMove();
         }
-        int click;
-        private void pB1_Click(object sender, EventArgs e)
+       
+        private void pB1_MouseDown(object sender, EventArgs e)
         {
             click++;
             l_Click.Text = "Clicked: " + click;
+            int index = new Random().Next(0, textR.Length);
+            g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
         }
 
-        private void pB2_Click(object sender, EventArgs e)
+        private void pB2_MouseDown(object sender, EventArgs e)
         {
             click++;
             l_Click.Text = "Clicked: " + click;
+            int index = new Random().Next(0, textR.Length);
+            g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
         }
 
-        private void pB3_Click(object sender, EventArgs e)
+        private void pB3_MouseDown(object sender, EventArgs e)
         {
             click++;
             l_Click.Text = "Clicked: " + click;
+            int index = new Random().Next(0, textR.Length);
+            g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouse_location.X = e.Location.X;
+            mouse_location.Y = e.Location.Y;
+            this.Invalidate();
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            missed++;
+            l_Missed.Text = "Missed: " + missed;
         }
     }
 }

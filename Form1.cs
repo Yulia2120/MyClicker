@@ -13,7 +13,6 @@ namespace MyClicker
     public partial class Form1 : Form
     {
         Graphics g;
-      //  Pen pen = new Pen(Color.Black, 2);
         Point mouse_location = new Point();
 
         string[] textR = { "100", "300", "400", "150" };
@@ -54,8 +53,8 @@ namespace MyClicker
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-          
             MonetMove();
+            GameResult();
         }
        
         private void pB1_MouseDown(object sender, EventArgs e)
@@ -65,6 +64,12 @@ namespace MyClicker
             int index = new Random().Next(0, textR.Length);
             g.DrawString(textR[index], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
             Sound();
+            if (textR[index] == "100" || textR[index] == "300"|| textR[index] == "150"|| textR[index] == "400")
+            {
+                int res = Convert.ToInt32(textR[index]);
+                labBitcoin.Text = res.ToString();
+
+            }
         }
 
         private void pB2_MouseDown(object sender, EventArgs e)
@@ -94,14 +99,43 @@ namespace MyClicker
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            missed++;
-            l_Missed.Text = "Missed: " + missed;
+            //missed++;
+            //l_Missed.Text = "Missed: " + missed;
         }
         private void Sound()
         {
             System.Media.SoundPlayer sound = new System.Media.SoundPlayer(@"C:\Users\Admin\source\repos\MyClicker\Resources\zvon monet.wav");
             sound.Play();
 
+        }
+
+        private void pB1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void GameResult()
+        {
+            if (pB1.Top >= 500 || pB2.Top >= 500 || pB3.Top >= 500)
+            {
+                missed++;
+                l_Missed.Text = "Missed: " + missed;
+            }
+            if(l_Missed.Text == "Missed: 5")
+            {
+                labOver.Visible = true;
+                timer1.Stop();
+                // l_Missed.Visible = false;
+                // l_Click.Visible = false;
+            }
+
+
+            if (l_Click.Text == "Clicked: 50")
+            {
+                labOver.Text = "Level Up...";
+                labOver.Visible = true;
+                timer1.Stop();
+            }
         }
     }
 }

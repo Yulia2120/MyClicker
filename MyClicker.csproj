@@ -92,5 +92,8 @@
   <ItemGroup>
     <None Include="Resources\zvon monet.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\klipartz.com.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

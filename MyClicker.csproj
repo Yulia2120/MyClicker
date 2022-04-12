@@ -93,12 +93,6 @@
     <None Include="Resources\zvon monet.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\klipartz.com.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WwaQ.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\kill.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

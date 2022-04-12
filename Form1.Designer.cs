@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.l_Click = new System.Windows.Forms.Label();
             this.l_Missed = new System.Windows.Forms.Label();
@@ -91,11 +92,11 @@
             this.labBitcoin.BackColor = System.Drawing.Color.Transparent;
             this.labBitcoin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labBitcoin.ForeColor = System.Drawing.Color.Gold;
-            this.labBitcoin.Location = new System.Drawing.Point(351, 26);
+            this.labBitcoin.Location = new System.Drawing.Point(360, 26);
             this.labBitcoin.Name = "labBitcoin";
-            this.labBitcoin.Size = new System.Drawing.Size(15, 17);
+            this.labBitcoin.Size = new System.Drawing.Size(30, 17);
             this.labBitcoin.TabIndex = 4;
-            this.labBitcoin.Text = "0";
+            this.labBitcoin.Text = "$: 0";
             // 
             // labOver
             // 
@@ -119,8 +120,8 @@
             this.pB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pB3.TabIndex = 0;
             this.pB3.TabStop = false;
-            this.pB3.Tag = "monet";
-            this.pB3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB1_MouseDown);
+            this.pB3.Tag = "";
+            this.pB3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB3_MouseDown);
             // 
             // pB2
             // 
@@ -132,8 +133,8 @@
             this.pB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pB2.TabIndex = 0;
             this.pB2.TabStop = false;
-            this.pB2.Tag = "monet";
-            this.pB2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB1_MouseDown);
+            this.pB2.Tag = "";
+            this.pB2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB2_MouseDown);
             // 
             // pB1
             // 
@@ -145,7 +146,7 @@
             this.pB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pB1.TabIndex = 0;
             this.pB1.TabStop = false;
-            this.pB1.Tag = "monet";
+            this.pB1.Tag = "";
             this.pB1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pB1_MouseDown);
             // 
             // Form1
@@ -163,12 +164,12 @@
             this.Controls.Add(this.pB2);
             this.Controls.Add(this.pB1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyClicker";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pBInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB3)).EndInit();

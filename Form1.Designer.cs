@@ -57,7 +57,7 @@
             this.l_Click.AutoSize = true;
             this.l_Click.BackColor = System.Drawing.Color.Transparent;
             this.l_Click.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.l_Click.ForeColor = System.Drawing.Color.Gold;
+            this.l_Click.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(176)))), ((int)(((byte)(37)))));
             this.l_Click.Location = new System.Drawing.Point(86, 9);
             this.l_Click.Name = "l_Click";
             this.l_Click.Size = new System.Drawing.Size(67, 17);
@@ -69,7 +69,7 @@
             this.l_Missed.AutoSize = true;
             this.l_Missed.BackColor = System.Drawing.Color.Transparent;
             this.l_Missed.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.l_Missed.ForeColor = System.Drawing.Color.Gold;
+            this.l_Missed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(176)))), ((int)(((byte)(37)))));
             this.l_Missed.Location = new System.Drawing.Point(12, 9);
             this.l_Missed.Name = "l_Missed";
             this.l_Missed.Size = new System.Drawing.Size(66, 17);
@@ -81,7 +81,7 @@
             this.labBitcoin.AutoSize = true;
             this.labBitcoin.BackColor = System.Drawing.Color.Transparent;
             this.labBitcoin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labBitcoin.ForeColor = System.Drawing.Color.Gold;
+            this.labBitcoin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(176)))), ((int)(((byte)(37)))));
             this.labBitcoin.Location = new System.Drawing.Point(315, 9);
             this.labBitcoin.Name = "labBitcoin";
             this.labBitcoin.Size = new System.Drawing.Size(134, 17);
@@ -106,7 +106,7 @@
             this.labUpgCount.AutoSize = true;
             this.labUpgCount.BackColor = System.Drawing.Color.Transparent;
             this.labUpgCount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labUpgCount.ForeColor = System.Drawing.Color.Gold;
+            this.labUpgCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(176)))), ((int)(((byte)(37)))));
             this.labUpgCount.Location = new System.Drawing.Point(172, 9);
             this.labUpgCount.Name = "labUpgCount";
             this.labUpgCount.Size = new System.Drawing.Size(122, 17);
@@ -128,12 +128,12 @@
             // 
             // cButUpgrade
             // 
-            this.cButUpgrade.BackColor = System.Drawing.Color.OrangeRed;
+            this.cButUpgrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(176)))), ((int)(((byte)(37)))));
             this.cButUpgrade.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
             this.cButUpgrade.FlatAppearance.BorderSize = 0;
             this.cButUpgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cButUpgrade.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cButUpgrade.ForeColor = System.Drawing.Color.SeaShell;
+            this.cButUpgrade.ForeColor = System.Drawing.Color.Gold;
             this.cButUpgrade.Location = new System.Drawing.Point(408, 387);
             this.cButUpgrade.Name = "cButUpgrade";
             this.cButUpgrade.Size = new System.Drawing.Size(60, 58);

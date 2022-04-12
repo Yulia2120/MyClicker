@@ -18,97 +18,46 @@ namespace MyClicker
         string[] textR = {"100", "200", "300" };
         Font font = new Font("Arial", 14);
         SolidBrush exbrush = new SolidBrush(Color.Yellow);
-        int click, missed;
-
+        int click, missed, upgradecount;
+        int sum = 1;
+        int upgradecost = 5;
         public Form1()
         {
             InitializeComponent();
             g = CreateGraphics();
-            MouseMove += Form1_MouseMove;
+       
         }
         private void MonetMove()
         {
             Random random = new Random();
             int x, y, z;
-            if(pB1.Top >= 500)
+            if(pB1.Top >= ClientSize.Height)
             {
                 x = random.Next(0, 300);
                 pB1.Location = new Point(x, 0);
+                pB1.Image = Properties.Resources._1;
             }
-            if (pB2.Top >= 500)
+            if (pB2.Top >= ClientSize.Height)
             {
                 y = random.Next(0, 300);
                 pB2.Location = new Point(y, 0);
+                pB2.Image = Properties.Resources._1;
             }
-            if (pB3.Top >= 500)
+            if (pB3.Top >= ClientSize.Height)
             {
                 z = random.Next(0, 300);
                 pB3.Location = new Point(z, 0);
+                pB3.Image = Properties.Resources._1;
             }
-            pB1.Top += 2;
-            pB2.Top += 1;
-            pB3.Top += 3;
+            pB1.Top += 3;
+            pB2.Top += 4;
+            pB3.Top += 2;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             MonetMove();
-            //GameResult();
-        }
-       
-        private void pB1_MouseDown(object sender, EventArgs e)
-        {
-            click++;
-            l_Click.Text = "Clicked: " + click;
-           // int index = new Random().Next(0, textR.Length);
-           // g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
-            Sound();
-
-           // if (l_Click.Text != "Clicked:5 ")
-            {
-                g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
-                int res = Convert.ToInt32(textR[0]);
-                int sum = click * res;
-                labBitcoin.Text = "$:" + sum.ToString();
-
-            }
-           
-        }
-
-        private void pB2_MouseDown(object sender, EventArgs e)
-        {
-            click++;
-            l_Click.Text = "Clicked: " + click;
-          //  int index = new Random().Next(0, textR.Length);
-            //g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
-            Sound();
-          //  if (l_Click.Text != "Clicked:5 ")
-            {
-                g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
-                int res = Convert.ToInt32(textR[0]);
-                int sum = click * res;
-                labBitcoin.Text = "$:" + sum.ToString();
-
-            }
-           
-        }
-
-        private void pB3_MouseDown(object sender, EventArgs e)
-        {
-            click++;
-            l_Click.Text = "Clicked: " + click;
-           // int index = new Random().Next(0, textR.Length);
-           // g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
-            Sound();
-          //  if (l_Click.Text != "Clicked:5 ")
-            {
-                g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
-                int res = Convert.ToInt32(textR[0]);
-                int sum = click * res;
-                labBitcoin.Text = "$:" + sum.ToString();
-
-            }
-          
+            GameResult();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -124,29 +73,133 @@ namespace MyClicker
             sound.Play();
 
         }
-
-        private void pB3_MouseDown(object sender, MouseEventArgs e)
+        private void pB1_Click(object sender, EventArgs e)
         {
+            click++;
+            l_Click.Text = $"Clicked: {click}";
+            Sound();
+            {
+                g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                int res = Convert.ToInt32(textR[0]);
+                sum = click * res;
+                labBitcoin.Text = $"Money Per Click: {sum} $";
+                if (upgradecount == 1)
+                {
+                    pB1.Image = Properties.Resources.kill;
+                    g.DrawString(textR[1], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                    res = Convert.ToInt32(textR[1]);
+                    sum = click * res;
 
+                    labBitcoin.Text = $"Money Per Click: {sum} $";
+                }
+                if (upgradecount == 2)
+                {
+                    pB1.Image = Properties.Resources.kill;
+                    g.DrawString(textR[2], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                    res = Convert.ToInt32(textR[2]);
+                    sum = click * res;
+
+                    labBitcoin.Text = $"Money Per Click: {sum} $";
+                }
+            }
         }
 
-        private void pB2_MouseDown(object sender, MouseEventArgs e)
-        {
 
+        private void pB2_Click(object sender, EventArgs e)
+        {
+            click++;
+            l_Click.Text = $"Clicked: {click}";
+            Sound();
+            {
+                g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                int res = Convert.ToInt32(textR[0]);
+                sum = click * res;
+                labBitcoin.Text = $"Money Per Click: {sum} $";
+                if (upgradecount == 1)
+                {
+                    pB2.Image = Properties.Resources.kill;
+                    g.DrawString(textR[1], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                    res = Convert.ToInt32(textR[1]);
+                    sum = click * res;
+
+                    labBitcoin.Text = $"Money Per Click: {sum} $";
+                }
+                if (upgradecount == 2)
+                {
+                    pB2.Image = Properties.Resources.kill;
+                    g.DrawString(textR[2], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                    res = Convert.ToInt32(textR[2]);
+                    sum = click * res;
+
+                    labBitcoin.Text = $"Money Per Click: {sum} $";
+                }
+            }
         }
 
-        private void pB1_MouseDown(object sender, MouseEventArgs e)
+        private void pB3_Click(object sender, EventArgs e)
         {
+            click++;
+            l_Click.Text = $"Clicked: {click}";
+            Sound();
+            {
+                g.DrawString(textR[0], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                int res = Convert.ToInt32(textR[0]);
+                sum = click * res;
+                labBitcoin.Text = $"Money Per Click: {sum} $";
+                if (upgradecount == 1)
+                {
+                    pB3.Image = Properties.Resources.kill;
+                    g.DrawString(textR[1], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                    res = Convert.ToInt32(textR[1]);
+                    sum = click * res;
 
+                    labBitcoin.Text = $"Money Per Click: {sum} $";
+                }
+                if (upgradecount == 2)
+                {
+                    pB3.Image = Properties.Resources.kill;
+                    g.DrawString(textR[2], font, exbrush, mouse_location.X - 50, mouse_location.Y - 50);
+                    res = Convert.ToInt32(textR[2]);
+                    sum = click * res;
+
+                    labBitcoin.Text = $"Money Per Click: {sum} $";
+                }
+            }
         }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Sound();
+            missed++;
+            l_Missed.Text = "Missed: " + missed;
+        }
+
+        private void cButUpgrade_Click(object sender, EventArgs e)
+        {
+            if (click > upgradecost - 1)
+            {
+                click = click - upgradecost;
+                l_Click.Text = $"Clicked: {click}";
+                upgradecount++;
+                labUpgCount.Text = $"Upgrades Count: {upgradecount}";
+                upgradecost = upgradecost * 2;
+                labUpgCost.Text = $"Upgrade Cost:\n {upgradecost}";
+           
+            }
+            else
+            {
+                MessageBox.Show("You don’t have enough money!", "Error");
+            }
+        }
+
 
         private void GameResult()
         {
-            if (pB1.Top >= 500 || pB2.Top >= 500 || pB3.Top >= 500)
-            {
-                missed++;
-                l_Missed.Text = "Missed: " + missed;
-            }
+            //if (pB1.Top >= ClientSize.Height || pB2.Top >= ClientSize.Height || pB3.Top >= ClientSize.Height)
+            //{
+            //    missed++;
+            //    l_Missed.Text = "Missed: " + missed;
+            //}
             if(l_Missed.Text == "Missed: 5")
             {
                 labOver.Visible = true;
@@ -156,7 +209,7 @@ namespace MyClicker
             }
 
 
-            if (l_Click.Text == "Clicked: 50")
+            if (l_Click.Text == "Clicked: 30")
             {
                 labOver.Text = "Level Up...";
                 labOver.Visible = true;

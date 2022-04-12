@@ -15,7 +15,7 @@ namespace MyClicker
         public FormLoading()
         {
             InitializeComponent();
-            this.Opacity = 0;
+            Opacity = 0;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
